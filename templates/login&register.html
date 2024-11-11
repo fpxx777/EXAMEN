@@ -46,6 +46,15 @@
         <label for="password_login">Contraseña:</label>
         <input type="password" name="password_login" id="password_login" placeholder="Ingresa tu contraseña" required/>
         <button type="submit">Iniciar Sesion</button>
+        {% if login_errors|length > 0 %}
+            {% for error in login_errors %}
+                {% if error == "ok" %}
+
+                {% else %}
+                <p class="error">**{{error}}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
       </form>
     </div>
   </body>
