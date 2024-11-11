@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #322C2B;
+}
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #AF8260;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #322C2B;
+    margin-bottom: 20px;
+}
+.idea-form {
+    margin-bottom: 20px;
+    border: 1px solid #322C2B;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #E4C59E;
+}
+ .idea-form textarea {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    background-color: #E4C59E;
+    color: #322C2B;
+    margin: 10px 0;
+    border: 1px solid #322C2B;
+    border-radius: 5px;
+    font-size: 16px;
+}
+::placeholder{
+    color: #322C2B;
+}
+.idea-form button {
+    background-color: #626F47;
+    color: #E4C59E;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.idea-form button:hover {
+    background-color: #485236;
+}
+.idea-list {
+    list-style-type: none;
+    padding: 0;
+}
+.idea-item {
+    background: #E4C59E;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.idea-item a{
+    text-decoration: none;
+    color: #322C2B;
+}
+
+.idea-item a:hover{
+    color: #221e1d;
+    text-decoration: underline;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+.buttons button {
+    background-color: #626F47;
+    color: #E4C59E;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.buttons button:hover {
+    background-color: #485236;
+    color: #E4C59E;
+}
+.buttons button.delete {
+    background-color: #803D3B;
+    color: #E4C59E;
+}
+.buttons button.delete:hover {
+    background-color: #6d2f2d;
+    color: #E4C59E;
+}
+.buttons button  a{
+    color: #E4C59E;
+    text-decoration: none;
+}
+
+.buttons button a:hover{
+    color: #E4C59E;
+    text-decoration: none;
+}
+
+.user-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-cont div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.log-out{
+    color: #803D3B;
+}
+
+.back{
+    color: #626F47;
+    margin-right: 10px;
+}
+
+.idea-required{
+    color: #803D3B;
+}

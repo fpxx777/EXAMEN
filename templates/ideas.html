@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ideas</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='ideas.css' ) }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/ideas/send" method="post">
+        <div class="user-cont">
+        <h2>Bienvenido/a {{session["first_name"]}} {{session["last_name"]}}</h2>
+        <a class="log-out" href="/logout">Cerrar Sesión</a>
+        </div>
+        <div class="idea-form">
+          <textarea
+            name="idea"
+            id="idea"
+            placeholder="Escribe tu idea aquí..."
+            minlength="5"
+            required
+          ></textarea>
+          <button type="submit">Publicar Idea</button>
+        </div>
+      </form>
+
+      <h2>Ideas de Otros Usuarios</h2>
+      <ul class="idea-list">
+        {% for idea in ideas %}
+        <li class="idea-item">
+          <a href="user/{{idea.usuario_id}}"><strong>{{idea.first_name}} dice:</strong></a>
+          {{idea.idea_text}} {% if idea.usuario_id == session["id"] %}
+          <div class="buttons">
+            <button><a href="/ideas/edit/{{idea.id}}">Editar</a></button>
+            <button class="delete"><a href="/ideas/delete/{{idea.id}}">Eliminar</a></button>
+          </div>
+          {% else %} {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

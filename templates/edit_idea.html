@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ideas</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='ideas.css' ) }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/ideas/edit/{{idea.id}}/send" method="post">
+        <div class="user-cont">
+          <h2>Editar mi idea</h2>
+          <div>
+            <a class="log-out" href="/ideas">Cancelar</a>
+          </div>
+        </div>
+        <div class="idea-form">
+            <p class="idea-required">**La idea debe tener minimo 5 caracteres</p>
+            <textarea
+              name="idea"
+              id="idea"
+              placeholder="{{idea.idea_text}}"
+              minlength="5"
+              required
+            ></textarea>
+            <button type="submit">Editar idea</button>
+          </div>
+      </form>
+    </div>
+  </body>
+</html>
